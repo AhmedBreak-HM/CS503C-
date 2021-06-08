@@ -22,6 +22,8 @@ int factorial(int number);
 int foo(int a, int b);
 int MaxValue(int num1, int num2, int num3);
 int MinValue(int num1, int num2, int num3);
+void Context();
+int Update(int value);
 int main()
 {
     // printHelloWorld();
@@ -48,15 +50,16 @@ int main()
     // int x, y;
     // cout << "enter two integer numbers: ";
     // cin >> x >> y;
-    // cout << foo(x, y);
+    cout << foo(1,5);
 
-    int a, b, c;
-    cout << "Enter three integer numbers:";
-    cin >> a >> b >> c;
-    cout << "Max=" << MaxValue(a, b, c);
-    cout << "\n";
-    cout << "Min=" << MinValue(a, b, c);
-    cout << "\n";
+    // int a, b, c;
+    // cout << "Enter three integer numbers:";
+    // cin >> a >> b >> c;
+    // cout << "Max=" << MaxValue(a, b, c);
+    // cout << "\n";
+    // cout << "Min=" << MinValue(a, b, c);
+    // cout << "\n";
+    // Context();
 
     return 0;
 }
@@ -158,4 +161,15 @@ int MinValue(int num1, int num2, int num3)
     else
         min = num3;
     return min;
+}
+void Context()
+{
+    int value = 100;
+    value = Update(value);
+    cout << "value = " << value;
+}
+int Update(int num)
+{
+    num += 10;
+    return ++num;
 }
