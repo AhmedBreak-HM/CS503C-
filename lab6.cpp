@@ -24,6 +24,8 @@ int MaxValue(int num1, int num2, int num3);
 int MinValue(int num1, int num2, int num3);
 void Context();
 int Update(int value);
+void funcRefParam(int &num);
+void tryMe(int &v);
 int main()
 {
     // printHelloWorld();
@@ -50,7 +52,7 @@ int main()
     // int x, y;
     // cout << "enter two integer numbers: ";
     // cin >> x >> y;
-    cout << foo(1,5);
+    // cout << foo(1, 5);
 
     // int a, b, c;
     // cout << "Enter three integer numbers:";
@@ -60,7 +62,12 @@ int main()
     // cout << "Min=" << MinValue(a, b, c);
     // cout << "\n";
     // Context();
+    // int number = 6;
+    // funcRefParam(number);
 
+    int x = 8;
+    for (int count = 1; count < 5; count++)
+        tryMe(x);
     return 0;
 }
 
@@ -172,4 +179,29 @@ int Update(int num)
 {
     num += 10;
     return ++num;
+}
+// display calculte menu
+
+void funcRefParam(int &num)
+{
+    cout << "In the function funcRefParam, before changing, num = " << num << endl;
+    num = 15;
+    cout << "In the function funcRefParam, after changing, num = " << num << endl;
+}
+
+void tryMe(int &v)
+{
+    static int num = 2;
+    if (v % 2 == 0)
+    {
+        num++;
+        v = v + 3;
+    }
+    else
+    {
+        num--;
+        v = v + 5;
+    }
+    cout << "ref V = " << v << ", "
+         << "static num = " << num << endl;
 }
